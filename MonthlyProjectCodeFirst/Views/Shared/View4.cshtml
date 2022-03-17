@@ -1,0 +1,37 @@
+﻿@model IEnumerable<MonthlyProjectCodeFirst.DAL.Teacher>
+
+<h2 style="text-align:center; background-color:aqua; font-size:xx-large;">Teacher Table </h2>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Department.departmentname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.teachername)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.departmentname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.teachername)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Teacherid }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Teacherid }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Teacherid })
+            </td>
+        </tr>
+    }
+
+</table>

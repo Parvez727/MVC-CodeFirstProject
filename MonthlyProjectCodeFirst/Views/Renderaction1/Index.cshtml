@@ -1,0 +1,20 @@
+﻿
+@model MonthlyProjectCodeFirst.Controllers.TestIndexViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Html.Partial("View2", Model.Test1)
+<hr />
+@Html.Partial("View3", Model.Test2)
+<hr />
+@Html.Partial("View4", Model.Test3)
+<hr />
+@Html.Partial("View5", Model.Test4)
+
+@*@Html.Partial("View2")*@
+<hr />
+
+

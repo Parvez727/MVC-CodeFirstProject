@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@{Html.RenderAction("index", "StudentTB");}
+<hr />
+@Html.Action("index", "Departments");
+<hr />
+@Html.Action("index", "Teachers");
+<hr />
+@Html.Action("index", "Courses");
+<hr />
+@Html.Action("index", "Product_Sales");
+<hr />
+@Html.Action("List", "MasterDetails");

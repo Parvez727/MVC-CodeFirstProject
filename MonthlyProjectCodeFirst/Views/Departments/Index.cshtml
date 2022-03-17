@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MonthlyProjectCodeFirst.DAL.Department>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.departmentname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.departmentLocation)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.departmentname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.departmentLocation)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Departmentid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Departmentid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Departmentid })
+        </td>
+    </tr>
+}
+
+</table>

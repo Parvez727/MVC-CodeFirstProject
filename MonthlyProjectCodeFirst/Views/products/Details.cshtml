@@ -1,0 +1,50 @@
+﻿@model MonthlyProjectCodeFirst.DAL.products
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>products</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.itemname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.itemname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sell)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sell)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.itemcode }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

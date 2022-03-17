@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MonthlyProjectCodeFirst.DAL.products>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.itemname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sell)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.itemname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sell)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.itemcode }) |
+            @Html.ActionLink("Details", "Details", new { id=item.itemcode }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.itemcode })
+        </td>
+    </tr>
+}
+
+</table>

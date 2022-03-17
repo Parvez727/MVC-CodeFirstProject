@@ -1,0 +1,35 @@
+﻿
+<html ng-app="Mod1">
+<head>
+    <script src="~/lib/angular.js/angular.min.js"></script>
+
+    <script>
+        var a = angular.module("Mod1", []);
+        a.controller("stCtrl", function ($scope, $http) {
+            $scope.showall = function () {
+                $http({
+                    method: "Get",
+                    url: "/products/JsonIndex"
+                }).then(function successCallback(data) {
+                    $scope.aliashad = data.data;
+                },
+                    function errorCallbak(response) {
+                        alert("error")
+                    }
+                )
+            }
+        })
+    </script>
+</head>
+<body ng-controller="stCtrl">
+    <button type="button" ng-click="showall">Show all</button>
+    <table>
+        <tr><th>gname</th><th>itemname</th></tr>
+        <tr ng-repeat="a in aliashad">
+            <td>gname</td>
+            <td>itemname</td>
+        </tr>
+    </table>
+
+</body>
+</html>

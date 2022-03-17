@@ -1,0 +1,59 @@
+﻿@model MonthlyProjectCodeFirst.DAL.Student
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.studentname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.studentname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.@class)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.@class)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.image_path)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Session["Image2"].ToString())" height="100" width="100" />
+
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Studentid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
